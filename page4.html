@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rappel - 2BAC Chimie (La Conductance)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 30px;
+            min-height: 100vh;
+        }
+        .header-container {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 900px;
+            margin: 0 auto 30px auto;
+        }
+        h1.main-title {
+            color: #003366;
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+        .whatsapp-container {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: inline-flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            background-color: #25d366;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .whatsapp-container:hover {
+            background-color: #20ba5a;
+            transform: scale(1.05);
+        }
+        .whatsapp-container svg {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            min-height: 20px;
+            fill: white;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: #ffffff;
+            border: none;
+            border-top: 4px solid #0056b3;
+            border-radius: 12px;
+            padding: 20px;
+            width: 100%;
+            max-width: 850px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px rgba(0,0,0,0.1);
+            border-top-color: #ff9800;
+        }
+        .card h3 {
+            color: #0056b3;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 8px;
+            margin-top: 0;
+            font-size: 19px;
+            text-align: left;
+        }
+        .formula-container {
+            display: none;
+            margin-top: 15px;
+            animation: fadeIn 0.4s ease;
+        }
+        .card.active .formula-container {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .click-hint {
+            color: #7f8c8d;
+            font-size: 13px;
+            font-style: italic;
+            text-align: center;
+            margin-top: 10px;
+            background: #f8f9fa;
+            padding: 6px;
+            border-radius: 6px;
+        }
+        ul {
+            padding-left: 20px;
+            color: #34495e;
+            line-height: 1.6;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .formula {
+            background: #eef2f7;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin: 12px auto;
+            border: 1px dashed #0056b3;
+            border-radius: 8px;
+            font-size: 18px;
+            color: #2c3e50;
+            max-width: 350px;
+        }
+        .fraction {
+            display: inline-flex;
+            flex-direction: column;
+            vertical-align: middle;
+            text-align: center;
+            margin: 0 4px;
+        }
+        .numerator {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 2px;
+        }
+        .denominator {
+            padding-top: 2px;
+        }
+        .schema-section {
+            text-align: center;
+            margin-top: 20px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e1e2e6;
+        }
+        .schema-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-top: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <h1 class="main-title">Bac 2026/2027 (SM-PC) - La Conductance (Chimie)</h1>
+        <a href="https://wa.me/212661094946" target="_blank" class="whatsapp-container">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            06 61 09 49 46
+        </a>
+    </div>
+
+    <div class="container">
+        <!-- Carte 1 : La conductance d'une solution électrolytique -->
+        <div class="card">
+            <h3>1- La conductance d'une solution électrolytique :</h3>
+            <div class="click-hint">👉 Cliquez ici pour afficher le contenu</div>
+            <div class="formula-container">
+                <ul>
+                    <li>La conductance d'une solution électrolytique est définie par la relation :</li>
+                </ul>
+                <div class="formula">
+                    <i>G</i> = <div class="fraction"><span class="numerator"><i>I</i></span><span class="denominator"><i>U</i></span></div> = <div class="fraction"><span class="numerator">1</span><span class="denominator"><i>R</i></span></div>
+                </div>
+                <ul>
+                    <li><strong><i>I</i></strong> : l'intensité de courant traversant la solution en <strong>A</strong>.</li>
+                    <li><strong><i>U</i></strong> : la tension entre les deux plaques en <strong>V</strong>.</li>
+                    <li><strong><i>G</i></strong> : la conductance de la portion de la solution contenue entre les deux plaques en siemens (<strong>S</strong>).</li>
+                    <li><strong><i>R</i></strong> : la résistance de la portion de la solution contenue entre les deux plaques en <strong>&Omega;</strong>.</li>
+                </ul>
+                <div class="schema-section">
+                    <strong>Schéma du dispositif</strong>
+                    <img src="https://i.ibb.co/mFgXNzfj/conductivit.png" alt="schema-conductance" class="schema-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Carte 2 : Expression de la conductance en fonction de la conductivité -->
+        <div class="card">
+            <h3>2- Relation entre la conductance et la conductivité :</h3>
+            <div class="click-hint">👉 Cliquez ici pour afficher le contenu</div>
+            <div class="formula-container">
+                <ul>
+                    <li>La conductance peut s'exprimer par une autre relation tel que :</li>
+                </ul>
+                <div class="formula">
+                    <i>G</i> = &sigma; &middot; <div class="fraction"><span class="numerator"><i>S</i></span><span class="denominator"><i>L</i></span></div>
+                </div>
+                <ul>
+                    <li><strong><i>G</i></strong> : est la conductance en <strong>S</strong>.</li>
+                    <li><strong>&sigma;</strong> : est la conductivité en <strong>S&middot;m<sup>-1</sup></strong>.</li>
+                    <li><strong><i>S</i></strong> : est la surface immergée en <strong>m<sup>2</sup></strong>.</li>
+                    <li><strong><i>L</i></strong> : est la distance entre les deux plaques en <strong>m</strong>.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Carte 3 : La conductivité d'une solution -->
+        <div class="card">
+            <h3>3- La conductivité d'une solution électrolytique :</h3>
+            <div class="click-hint">👉 Cliquez ici pour afficher le contenu</div>
+            <div class="formula-container">
+                <ul>
+                    <li>La conductivité d'une solution électrolytique s'exprime par la relation suivante :</li>
+                </ul>
+                <div class="formula">
+                    &sigma; = &sum; &lambda;<sub>X<sub>i</sub></sub> &middot; [X<sub>i</sub>]
+                </div>
+                <ul>
+                    <li><strong>&sigma;</strong> : est la conductivité de la solution en <strong>S&middot;m<sup>-1</sup></strong>.</li>
+                    <li><strong>&lambda;<sub>X<sub>i</sub></sub></strong> : est la conductivité molaire ionique de l'ion X<sub>i</sub> en <strong>S&middot;m<sup>2</sup>&middot;mol<sup>-1</sup></strong>.</li>
+                    <li><strong>[X<sub>i</sub>]</strong> : est la concentration molaire effective de l'ion X<sub>i</sub> dans la solution en <strong>mol&middot;m<sup>-3</sup></strong>.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
